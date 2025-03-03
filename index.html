@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="css/style.css" >
+ </head>
+ <body>
+   <div class='container'>
+      <div class="bemVindo">
+       <h2>SEJA BEM VINDO</h2>
+      </div>
+           <!-- Novo container para agrupar a logo e o card -->
+           <div class="logo-card-container">
+               <div class="logo">
+                   <img src="img/logoprojetoavalia+.jpg" alt="Logo">
+               </div>
+               <div class='card'> 
+                   <h1> Cadastrar Usuário </h1>
+                   <div id='msgError'></div>
+                   <div id='msgSuccess'></div>
+                       <div class="label-float">
+                           <input type="text" id="nome" placeholder=" " required>
+                           <label id="labelNome" for="nome">Nome</label>
+                       </div>
+
+                       <div class="label-float">
+                           <input type="number" id="idade" placeholder=" " required>
+                           <label id="labelIdade" for="idade">Idade</label>
+                       </div>
+
+                       <div class="label-float">
+                           <input type="text" id="cpf" placeholder=" " required>
+                           <label id="labelCPF" for="cpf">CPF</label>
+                       </div>
+
+                       <div class="label-float">                    
+                           <label id="labelCurso" for="curso">Curso Solicitado</label><br>
+                           <select name="curso" id="curso">
+                               <option value="-">-</option>
+                               <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                               <option value="arquitetura">Arquitetura</option>
+                               <option value="biomedicina">Biomedicina</option>
+                               <option value="CiencComputacao">Ciência da Computação</option>
+                               <option value="CiencDados">Ciência de Dados</option>
+                               <option value="comunicacao">Comunicação Social</option>
+                               <option value="contabilidade">Contabilidade</option>
+                               <option value="DesigGrafico">Design Gráfico</option>
+                               <option value="EdFisica">Educação Física</option>
+                               <option value="EngComputacao">Engenharia da Computação</option>
+                               <option value="EngSoftware">Engenharia de Software</option>
+                               <option value="EngEletrica">Engenharia Elétrica</option>
+                               <option value="fisioterapia">Fisioterapia</option>
+                               <option value="gestaoTI">Gestão da Tecnologia da Informação</option>
+                               <option value="Medicina">Medicina</option>
+                               <option value="psicologia">Psicologia</option>
+                               <option value="si">Sistemas de Informação</option>
+                           </select>
+                       </div>
+
+                       <div class="label-float">
+                           <input type="email" id="email" placeholder=" " required>
+                           <label id="labelEmail" for="email">Email</label>
+                       </div>
+
+                       <div class="label-float">               
+                           <label id="labelPermissao" for="permissao">Permissão</label> <br>
+                           <select name="permissao" id="permissao">
+                               <option value="-">-</option>
+                               <option value="aluno">Aluno</option>
+                               <option value="professor">Professor</option>
+                               <option value="administrador">Administrador</option>
+                           </select>
+                       </div>        
+                   <div class='justify-center'>
+                       <button onclick='cadastrar()'>Cadastrar</button>
+                   </div>
+                  </div>
+           </div>
+       </div>
+   </div>
+</body>
+
+ </html>
