@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
@@ -16,51 +14,70 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh; 
-  background: linear-gradient(to right, #0066cc, #ffffff); 
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #0066cc, #ffffff);
 }
 
 .logo-card-container {
   display: flex;
-  flex-direction: row; /* Alinha lado a lado */
-  justify-content: center; /* Centraliza na tela */
-  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: auto;
+  box-sizing: border-box;
+  border-radius: 50px;
+  overflow: hidden;
 }
 
 .card {
   background-color: #ffffff;
   padding: 18px;
   width: 400px;
+  border: none;
 }
 
 .bemVindo h2 {
-  width: 300px; /* Defina um tamanho para a div */
-  height: 100px;
-  position: absolute;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
+  font-size: 30px;
+  color: #000;
+  margin: 10px 0; 
+  text-align: left;
+  transform: translateX(650px);
+  font-family: 'Arial', sans-serif;
+  font-weight: bold; /* Deixa o texto em negrito */
 }
 
 .logo img {
-  width: 619px; 
-  height: auto; 
+  width: 609px;
+  height: auto;
+  border: none;
+  display: block;
+  border-top-left-radius: 50px; /* Arredonda o canto superior esquerdo */
+  border-bottom-left-radius: 50px; /* Arredonda o canto inferior esquerdo */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #0d009c;
+  margin-top: 60px;
+  color: #090909;
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold; /* Deixa o texto em negrito */
+  transform: translateX(-90px); /* Ajuste o valor para mover para a esquerda */
+}
+
+.label-float-container {
+  border-radius: 4px; /* Adiciona borda arredondada */
+  margin-bottom: 10px; /* Adiciona espaçamento entre os campos */
 }
 
 .label-float {
   position: relative;
-  padding-top: 13px;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  padding: 10px;
 }
+
 
 /* Estilos para o campo de entrada e seleção */
 .label-float input,
@@ -68,121 +85,57 @@ h1 {
   width: 100%;
   padding: 5px 5px;
   display: inline-block;
-  border: 0;
-  border-bottom: 2px solid #0a0a0a;
+  border: none;
   background-color: transparent;
   outline: none;
   min-width: 180px;
   font-size: 16px;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
   border-radius: 0;
 }
 
-.label-float input:focus,
-.label-float select:focus {
-  border-bottom: 2px solid #4038a0;
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label,
+.label-float select:focus + label {
+    display: none; /* Oculta o label */
 }
 
 .label-float label {
-  color: #000000;
+  color: #0d0b0b;
   pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
   margin-top: 13px;
-  transition: all .3s ease-out;
 }
 
-#curso {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #0d009c;
-    border-radius: 4px;
-    background-color: #f4f4f4; /* Cor de fundo mais clara para o campo */
-    outline: none;
-    margin-top: 10px;
-    color: #333; /* Cor do texto das opções */
-    transition: all 0.3s ease-in-out;
-  }
+#curso:hover {
+  border-color: #1c8cf5; /* Mudança na borda quando o usuário passar o mouse */
+}
 
-  #curso:hover {
-    border-color: #1c8cf5; /* Mudança na borda quando o usuário passar o mouse */
-  }
-
-  #permissao {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #0d009c;
-    border-radius: 4px;
-    background-color: #f4f4f4; /* Cor de fundo mais clara para o campo */
-    outline: none;
-    margin-top: 10px;
-    color: #333; /* Cor do texto das opções */
-    transition: all 0.3s ease-in-out;
-  }
-
-  #permissao:hover {
-    border-color: #1c8cf5;
-  }
-
-.label-float input:focus + label,
-.label-float input:valid + label,
-.label-float select:focus + label {
-  font-size: 13px;
-  margin-top: 0;
-  color: #4038a0;
+#permissao:hover {
+  border-color: #1c8cf5;
 }
 
 /* Estilo do botão */
 button {
-  background-color: transparent;
-  border-color: #0d009c;
-  color: #0d009c;
-  padding: 7px;
+  background-color: rgb(14, 113, 167); /* Azul claro */
+  color: white; /* Texto branco */
+  padding: 10px 15px;
   font-weight: bold;
   font-size: 12pt;
   margin-top: 20px;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
-  outline: none;
-  transition: all .4s ease-out;
-}
-
-button:hover {
-  background-color: #0d009c;
-  color: #fff;
+  transition: all 0.4s ease-out;
+  display: block; /* Garante que o botão ocupe toda a largura disponível */
+  margin-left: auto; /* Move o botão para a direita */
 }
 
 .justify-center {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.fa-eye {
-  position: absolute;
-  top: 15px;
-  right: 10px;
-  cursor: pointer;
-  color: #0d009c;
-}
 
-#msgError {
-  text-align: center;
-  color: #ff0000;
-  background-color: #ffbbbb;
-  padding: 10px;
-  border-radius: 4px;
-  display: none;
-}
-
-#msgSuccess {
-  text-align: center;
-  color: #008000;
-  background-color: #bbffbb;
-  padding: 10px;
-  border-radius: 4px;
-  display: none;
-}
