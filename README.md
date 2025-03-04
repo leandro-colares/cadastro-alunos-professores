@@ -4,4 +4,4 @@ O objetivo do projeto é criar uma interface simples e funcional para cadastro d
 
 ## Como acessar 🔗
 
-[Visualizar o projeto](https://github.com/leandro-colares/cadastro-alunos-professores/)🌐
+[Visualizar o projeto](https://leandro-colares.github.io/cadastro-alunos-professores/)🌐
