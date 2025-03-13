@@ -16,6 +16,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateX(-150px);
   height: 100vh;
   background: linear-gradient(to right, #0066cc, #ffffff);
 }
