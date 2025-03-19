@@ -208,6 +208,3 @@ button {
   transition: color 0.3s ease; 
 }
 
-.toggle-password:hover i {
-  color: #dd0ccc; /* Cor quando o mouse passa por cima */
-}
