@@ -1,11 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
 body {
-  background-image: url(https://i.imgur.com/XbRg9D7.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -16,139 +16,198 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateX(-150px);
   height: 100vh;
-  background: linear-gradient(to right, #0066cc, #ffffff);
+  background: linear-gradient(to right, #ffff, #0066cc);
 }
 
-.logo-card-container {
+.cabecalho {
+  position: fixed; /* Fixar a posição do botão no topo da tela */
+  top: 10px; /* Distância do topo */
+  right: 10px; /* Distância da direita */
+  z-index: 1000;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  width: auto;
-  box-sizing: border-box;
-  border-radius: 50px;
-  overflow: hidden;
+  gap: 10px; 
+}
+
+.btn-sair, .btn-config {
+  background-color: #e6504b; /* Cor de fundo vermelha */
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+.btn-sair:hover {
+  background-color: #580505; /* Cor de fundo quando o botão for clicado */
+}
+
+.btn-config:hover {
+  background-color: #2c6b2f;
+}
+
+.data-local {
+  position: fixed; /* Fixa a data no topo à direita */
+  top: 50px; /* Um pouco abaixo dos botões */
+  right: 190px; /* Ajuste esse valor para mover mais para a direita */
+  left: 520px;
+  font-size: 16px;
+  color: #06090c; /* Cor do texto */
+  font-family: Arial, sans-serif;
+  z-index: 999; /* Garante que a data fique abaixo dos botões */
 }
 
 .card {
-  background-color: #ffffff;
-  padding: 18px;
-  width: 400px;
+  background-color: #dde7e7;
+  padding: 60px;
   border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 320px;
 }
 
-.bemVindo h2 {
-  font-size: 30px;
-  color: #000;
-  margin: 10px 0; 
-  text-align: center;
-  transform: translateX(650px);
-  font-family: 'Arial', sans-serif;
-  font-weight: bold; /* Deixa o texto em negrito */
-}
-
-.logo img {
-  width: 609px;
-  height: auto;
-  border: none;
-  display: block;
-  border-top-left-radius: 50px; /* Arredonda o canto superior esquerdo */
-  border-bottom-left-radius: 50px; /* Arredonda o canto inferior esquerdo */
+.required-field {
+  color: red;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 60px;
-  color: #090909;
+  margin-bottom: 30px;
+  color: #35748d;
   font-size: 24px;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold; /* Deixa o texto em negrito */
-  transform: translateX(-90px); /* Ajuste o valor para mover para a esquerda */
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
 }
 
 .label-float-container {
-  border-radius: 4px; /* Adiciona borda arredondada */
-  margin-bottom: 10px; /* Adiciona espaçamento entre os campos */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .label-float {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: 100%;
-  margin-bottom: 15px; /* Espaço entre os campos */
+  margin-bottom: 15px;
 }
 
+.label-float input,
+.label-float select {
+  width: 100%;
+  padding: 10px;
+  padding-left: 35px; /* Espaço suficiente para o ícone */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.label-float label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
 
 .label-float i {
   position: absolute;
-  left: 15px; /* Ajuste fino para alinhar melhor */
+  left: 12px;
   top: 50%;
-  transform: translateY(-50%);
-  color: #333;
-  font-size: 18px;
-}
-
-/* Campo de entrada */
-.label-float input {
-  width: calc(100% - 90px);
-  padding: 20px 15px 12px 45px;
-  border: none;
-  background-color: #d3d3d3;
-  outline: none;
-  font-size: 16px;
-  border-radius: 20px;
-  transition: 0.3s;
-}
-
-/* Quando o usuário digita ou foca no campo, o label sobe */
-.label-float input:focus + label,
-.label-float input:not(:placeholder-shown) + label {
-  top: 5px;
-  font-size: 12px;
-  color: #010f0d;
-}
-
-/* Rótulo dentro do campo */
-.label-float label {
-  position: absolute;
-  left: 45px; /* Mantém alinhado ao input */
-  top: 50%;
-  transform: translateY(-50%);
-  transition: 0.3s;
-  font-size: 16px;
-  color: #666;
+  transform: translateY(-50%) translateX(10);
+  color: #475963;
   pointer-events: none;
 }
 
-#curso:hover {
-  border-color: #1c8cf5; /* Mudança na borda quando o usuário passar o mouse */
-}
-
-#permissao:hover {
-  border-color: #1c8cf5;
-}
-
-/* Estilo do botão */
 button {
-  background-color: rgb(14, 113, 167); /* Azul claro */
-  color: white; /* Texto branco */
-  padding: 10px 15px;
+  background-color: rgb(14, 113, 167);
+  color: white;
+  padding: 10px 20px;
   font-weight: bold;
   font-size: 12pt;
   margin-top: 20px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.4s ease-out;
-  display: block; /* Garante que o botão ocupe toda a largura disponível */
-  margin-left: auto; /* Move o botão para a direita */
+  border: none;
 }
 
 .justify-center {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
 }
 
+.btn-voltar {
+  background-color: white;
+  color: #0066cc;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-left: 1390px;
+}
 
+.label-float input[type="date"] {
+  padding-left: 35px; /* Aumenta o espaço à esquerda para o ícone */
+}
+
+.label-float select {
+  padding-left: 35px; /* Aumenta o espaço à esquerda para o ícone */
+}
+
+.btn-cadastrar:hover {
+    background-color: #2adf33;
+}
+
+.btn-limparCampos:hover {
+  background-color: #e22626;
+}
+
+.btn-config::after,
+.btn-sair::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(px); /* Move o tooltip para baixo */
+  bottom: -30px; /* Distância abaixo do botão */
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.btn-config:hover::after,
+.btn-sair:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.toggle-password i {
+  font-size: 18px;
+  color: #56ace6; /* Cor padrão */
+  transition: color 0.3s ease; 
+}
+
+.toggle-password:hover i {
+  color: #dd0ccc; /* Cor quando o mouse passa por cima */
+}
